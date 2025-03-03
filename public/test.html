@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+* {
+    /* Change your font family */
+    font-family: sans-serif;
+}
+
+.content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 600px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+    padding: 12px 15px;
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.content-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+</style>
+<script src="javascripts/test.js" ></script>
+</head>
+<body>
+
+<h2>Round Card</h2>
+<div id="app">
+  <p>{{ title }}, {{date}}</p>
+
+  <div v-if="true">
+    <div @click="title = 'something else'">jnj</div>
+  </div>
+
+  <div class="card">
+    <img src="img_avatar2.png" alt="Avatar" style="width:100%">
+    <div class="container">
+      <h4><b>Jane Doe</b></h4>
+      <p>Interior Designer</p>
+    </div>
+  </div>
+</div>
+
+<div id="Tab3" >
+  <table class="content-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>idk</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+      <tbody id="bruh"></tbody>
+
+  </table>
+</div>
+
+<button onclick="getUsers()">dede</button>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AW Volunteering</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/home.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="routes/index.js"></script>
+    <script src="https://kit.fontawesome.com/ba7bded5c0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <a href="http://localhost:8081/"class="logo">AW</a>
+        <nav class="navbar">
+            <a href="organisation.html">Volunteer</a>
+            <a href="events.html">Events</a>
+            <a href="about.html">About</a>
+            <div class="dropdown">
+                <button class="dropbtn" onclick="myFunction()">Profile
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content" id="myDropdown">
+                  <a href="userDashboard2.html">My Dashboard</a>
+                  <a href="organisation.html">My Organisation</a>
+                  <a href="profileSettings.html">Profile Settings</a>
+            </div>
+            <a href="login.html">Login</a>
+            </div>
+        </nav>
+    </header>
+    <section class="image">
+        <div class="hero-image">
+            <h1>Find a role that is right for you</h1>
+            <button onclick = "orgRoute()" id="volunteerRoles">Search Volunteer Roles</button>
+        </div>
+    </section>
+
+    <br>
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <img src="\images\roman-synkevych-5wJ2GiYSifA-unsplash.jpg" alt="Volunteering Ukraine" style="width:100%">
+          <div class="text">
+            <h1>Volunteering Ukraine</h1>
+            <button type="button">Join now</button>
+          </div>
+        </div>
+
+        <div class="mySlides fade">
+          <img src="\images\aaron-doucett-HkbeLxOJlqk-unsplash.jpg" alt ="UNICEF" style="width:100%">
+          <div class="text">
+            <h1>UNICEF</h1>
+            <button type="button">Join now</button>
+          </div>
+        </div>
+
+        <div class="mySlides fade">
+          <img src="\images\brian-yurasits-PzQNdXw2a6g-unsplash.jpg" alt="Red Cross" style="width:100%">
+          <div class="text">
+            <h1>Red Cross</h1>
+            <button type="button">Join now</button>
+          </div>
+        </div>
+
+
+        <a class="previous" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br>
+
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+
+    <div class="event-container">
+        <h1 class = event-header>Check out our ongoing Events</h1>
+        <button onclick = "eventRoute()">View All Events</button>
+        <div class="event-box">
+        </div>
+    </div>
+    <div class="reviews">
+        <h1>What our users are saying...</h1>
+        <div class="review-box">
+            <div class="review-card">
+                <img  src="images/fcce92b6dd2ebb5259426a424a6f983d.jpg"/>
+                <div class="image-1"></div>
+                <h1>John</h1>
+                <i class="fa-solid fa-quote-left fa-3x"></i>
+                <p></i>
+                    Great stuff from asjhsakjdh<br>
+                    asdjadkjashd<br>
+                    asdajhjdjakshsdak<br>
+                </p>
+            </div>
+            <div class="review-card">
+                <img src="images/Toji_kills_himself_to_save_Megumi_(Anime).webp"/>
+                <div class="image-2"></div>
+                <h1>Phil</h1>
+                <i class="fa-solid fa-quote-left fa-3x"></i>
+                <p></i>
+                    Great stuff from asjhsakjdh<br>
+                    asdjadkjashd<br>
+                    asdajhjdjakshsdak<br>
+                </p>
+            </div>
+            <div class="review-card">
+                <img  src="images/9121ce0feaa129d203fa1334773eaa19.jpg"/>
+                <div class="image-3"></div>
+                <h1>V</h1>
+                <i class="fa-solid fa-quote-left fa-3x"></i>
+                <p></i>
+                    Great stuff from asjhsakjdh<br>
+                    asdjadkjashd<br>
+                    asdajhjdjakshsdak<br>
+                </p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer">
+            <div class="footer-logo">
+                <h1>AW</h1>
+            </div>
+            <div class="footer-1">
+                <h2>Quick Links</h2>
+                <ul class="list">
+                    <li><a href="#">Volunteer</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </div>
+            <div class="footer-3">
+                <h2>Extra</h2>
+                <ul class="list">
+                    <li><a href="#">Terms and Conditions</a></li>
+                    <li><a href="">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-2">
+                <h2>Contact Us</h2>
+                <p>Email: eg@gmail.com</p>
+                <p>Phone: 03948483939</p>
+                <p>Address: your mums house</p>
+            </div>
+        </div>
+        <div class="stamp">
+            <p>&copy 2024 AW . All rights reserved</p>
+        </div>
+    </footer>
+
+    <script src="/javascripts/home.js"></script>
+</body>
+</html>

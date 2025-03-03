@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Jersey+25&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+body, html{
+    height: 100%;
+  }
+
+h1, h2, button, p{
+    font-family:"Inter", sans-serif;
+}
+
+h1{
+    font-size:50px;
+    font-weight:bolder;
+}
+
+h4{
+    font-size:50px;
+    font-weight:bolder;
+}
+
+/*hero-image*/
+.hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/aaron-doucett-HkbeLxOJlqk-unsplash.jpg");
+    height: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+  .hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color:rgba(12, 6, 125, 0.5);
+    padding:50px;
+  }
+
+  .hero-text button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 10px 25px;
+    color: black;
+    background-color: #ddd;
+    text-align: center;
+    cursor: pointer;
+    border-radius:2px;
+  }
+
+  .hero-text button:hover {
+    background-color: #555;
+    color: white;
+  }
+
+  .column {
+    float: left;
+    width: 75%;
+    padding: 10px;
+  }
+
+  .column2 {
+    float: left;
+    width: 25%;
+    padding: 10px;
+  }
+
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .row{
+    background-color:#ebebeb;
+  }
+
+  .container{
+    background-color:white;
+    border-radius:5px;
+    padding:10px;
+  }
+
+  .container h2{
+    font-size:20px;
+    font-weight:bolder;
+  }
+
+  .container p{
+    padding-top:10px;
+    padding-bottom:1px;
+  }
+
+  .postImage{
+    overflow:clip;
+    width:40%;
+    height:100px;
+  }
+
+  .post{
+    background-color:white;
+  }
+
+  .upEvent {
+    width: 100%;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    background-color: white;
+    margin-top: 20px;
+    margin-bottom: 20px; /* Add margin to the bottom of each item */
+  }
+
+  .upEvent h2 {
+    font-weight: bold;
+  }

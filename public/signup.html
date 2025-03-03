@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/signup.css">
+    <title>AW Volunteering</title>
+    <script src = "javascripts/logins.js"></script>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">AW</a>
+        <nav class="navbar">
+            <a href="organisation.html">Volunteer</a>
+            <a href="#">About</a>
+            <a href="events.html">Events</a>
+            <a href="login.html">Login</a>
+            <a href="" class=""></a>
+            <button class="started">Get Started</button>
+        </nav>
+    </header>
+    <div class="image">
+        <div class="form-box">
+            <form action="/action_page.php" class="container">
+                <h1>Sign Up</h1>
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" id ="email" required>
+                <label for="password"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="signup_pass" id = "signup_pass" required>
+                <label for="password-rpt"><b>Re-type Password</b></label>
+                <input type="password-rpt" placeholder="Enter Password Again" name="signup_confirm" id ="signup_confirm" required>
+                <button type="button" class="register-btn" onclick="signup()">Create Account</button>
+                <p id = "text">Already have an account? <a href="login.html" class="login">Login</a> </p>
+
+              </form>
+        </div>
+      </div>
+      <footer>
+        <div class="footer">
+            <div class="footer-logo">
+                <h1>AW</h1>
+            </div>
+            <div class="footer-1">
+                <h2>Quick Links</h2>
+                <ul class="list">
+                    <li><a href="#">Volunteer</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </div>
+            <div class="footer-3">
+                <h2>Extra</h2>
+                <ul class="list">
+                    <li><a href="#">Terms and Conditions</a></li>
+                    <li><a href="">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-2">
+                <h2>Contact Us</h2>
+                <p>Email: eg@gmail.com</p>
+                <p>Phone: 03948483939</p>
+                <p>Address: your mums house</p>
+            </div>
+        </div>
+        <div class="stamp">
+            <p>&copy 2024 AW . All rights reserved</p>
+        </div>
+    </footer>
+</body>
+</html>

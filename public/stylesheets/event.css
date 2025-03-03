@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Jersey+25&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+
+body, html{
+    height: 100%;
+  }
+
+h1, h2, button, p{
+    font-family:"Inter", sans-serif;
+}
+
+h1{
+    font-size:50px;
+    font-weight:bolder;
+}
+
+h4{
+    font-size:50px;
+    font-weight:bolder;
+}
+
+
+
+.hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/aaron-doucett-HkbeLxOJlqk-unsplash.jpg");
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+  .containerContent{
+    transform:translateY(30px);
+  }
+  .container{
+    height:500px;
+    width:400px;
+    text-align: center;
+    float:center;
+    color: black;
+    background-color:white;
+    padding:50px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  }
+
+  .container h1{
+    font-family:"Inter", "Sans-serif";
+    font-size: 25px;
+    text-align:left;
+  }
+
+  .container h2{
+    font-family:"Inter", "Sans-serif";
+    font-size: 15px;
+    text-align:left;
+    color:green;
+    font-weight:bolder;
+  }
+
+  .container h3{
+    font-family:"Inter", "Sans-serif";
+    font-size: 15px;
+    text-align:left;
+    color:#414141;
+    font-weight:bolder;
+  }
+  .container hr{
+    width: 15%;
+    border: 1.5px solid green;
+  }
+
+  .container p{
+    text-align:left;
+    font-size:15px;
+    line-height:25px;
+    padding:3px;
+  }
+
+
+  .container button{
+    display:flex;
+    font-family:"Inter", "Sans-serif";
+    font-weight:bolder;
+    justify-content: center;
+    background-color:#426B1F;
+    color:white;
+    border:none;
+    border-radius:2px;
+    font-size:24px;
+    padding:5px 15px 5px 15px;
+    position:relative;
+    right:105px;
+    transition-duration:0.4s;
+    margin:auto;
+    box-shadow:0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19) ;
+  }
+
+  .container button:hover{
+    background-color:darkgreen;
+    box-shadow: 0 0 20px #4B5320;
+    transform:translateY(-5px);
+  }
+  #conButton{
+    padding-top:5px;
+    padding-bottom:10px;
+  }
+
+  #description {
+    margin-left:600px;
+    margin-right:20px;
+  }
+
+  #description h1{
+    font-family:"Inter", "Sans-serif";
+    font-size: 40px;
+  }
+
+  #description p{
+    font-family:"Inter", "Sans-serif";
+    line-height:20px;
+    padding-top:10px;
+  }
+
+  #description hr{
+    width: 15%;
+    border: 3px solid green;
+  }

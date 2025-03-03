@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/login.css">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <!--<script src="https://kit.fontawesome.com/ba7bded5c0.js" crossorigin="anonymous"></script>-->
+    <script src = "javascripts/logins.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async></script>
+    <title>Login</title>
+</head>
+
+<body>
+    <div id ="navBar"></div>
+    <div class="image">
+        <div class="form-box">
+            <form class="container">
+                <h1>Login</h1>
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="username" id="username" required>
+                <label for="pass"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="password" id="password" required>
+                <button type="button" class="btn" onclick="login(); adminLogin()">Login</button>
+                <p id = "text">Dont have an account? <a href="signup.html" class="signup">Sign Up</a> </p>
+                <div id="g_id_onload"
+                    data-client_id="439514934387-v5knb6rh1d5iu7m8g0al1vbqos2uparl.apps.googleusercontent.com"
+                    data-context="signin"
+                    data-ux_mode="popup"
+                    data-callback="googleLogin"
+                    data-auto_prompt="false">
+                </div>
+                <div class="g_id_signin"
+                    data-type="standard"
+                    data-shape="rectangular"
+                    data-theme="outline"
+                    data-text="signin_with"
+                    data-size="large"
+                    data-logo_alignment="left">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+    <script src="/javascripts/main.js"></script>
+</body>
+
+</html>

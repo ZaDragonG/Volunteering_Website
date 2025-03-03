@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <link rel="stylesheet" href="stylesheets/adminDashboard.css">
+    <script src="/javascripts/main.js"></script>
+</head>
+
+<body>
+    <div id = "navBar"></div>
+    <div class="hero-image">
+        <div class="hero-text">
+            <h1>Hello John Doe</h1>
+            <p>Organisation Name</p>
+            <br>
+            <button type = "button" onclick="getPublicPosts(); getUpcomingEvents()">Edit profile</button>
+            <span id = "manButton">
+                <button type = "button"  onclick = loadUserDash()>User Dashboard</button>
+            </span>
+            <span id = "adminButton">
+                <button type = "button" onclick = loadManagerDash()>Manager Dashboard</button>
+            </span>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Admin Dashboard</h1>
+        <button type = "button"  id="createOrganizationBtn" onclick = "loadCreateOrganisationPage()">Create Organization</button>
+        <h2>Users</h2>
+        <div id="userTable"></div>
+    </div>
+    <div id = "footer"></div>
+
+    <script>
+
+function isAdminCheck(){
+const xhr = new XMLHttpRequest();
+ xhr.onreadystatechange = function () {
+    if (this.readyState === 4 && this.status === 200) {
+        const isAdmin = JSON.parse(this.responseText);
+
+            if (!isAdmin) {
+                window.location.href = 'index.html';
+            }
+    }
+}
+xhr.open("GET", "/isAdmin", true);
+ xhr.send();
+}
+        function loadManagerDash(){
+            window.location.href = 'managerDashboardTest.html';
+        }
+
+        function loadUserDash() {
+
+        window.location.href = 'userDashboard2.html';
+        }
+        function getUsers() {
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                    let json = JSON.parse(this.responseText);
+                    let text = "<table> <thead> <tr> <th>Name</th> <th>Email</th> <th>Action</th> </tr> </thead> <tbody>";
+                    for (let u of json) {
+                        text += "<tr>";
+                        text += `<td>${u.first_name}  ${u.last_name}</td><td>${u.email}</td><td><button class="makeManagerBtn" onclick = addManagers(${u.user_id})>Make Manager</button></td></tr>`;
+                    }
+                    text += "</tbody></table>";
+                    document.getElementById('userTable').innerHTML = text;
+                }
+            };
+            xhr.open("GET", "/allUserData", true);
+            xhr.send();
+        }
+
+    function addManagers(userID) {
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+
+        }
+    };
+    xhr.open("POST", "/makeManager", true);
+    // Send the userID as a parameter in the send() method
+    xhr.send(JSON.stringify({userID: userID}));
+}
+
+
+        window.onLoad(isAdminCheck(),getUsers());
+        function loadCreateOrganisationPage() {
+            window.location.href = 'createOrganisation.html';
+        }
+    </script>
+</body>
+</html>

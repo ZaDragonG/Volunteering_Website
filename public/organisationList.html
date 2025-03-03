@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Our Funky HTML Page</title>
+    <meta name="description" content="Our first page">
+    <meta name="keywords" content="html tutorial template">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="/stylesheets/organisationList.css">
+    <script src="/javascripts/main.js"></script>
+    <script src="/javascripts/organisationList.js"></script>
+</head>
+
+<body>
+    <div id="navBar"></div>
+    <div class="container">
+        <img src="/images/orgListHeader.webp" alt="Girl in a jacket">
+        <div class="heading-box">
+            <h1>Explore Volunteer Opportunities</h1>
+            <p>Discover a multitude of volunteering organizations dedicated to diverse causes. From environmental conservation to community outreach, this curated list offers opportunities for individuals to make a meaningful impact. Explore, connect, and contribute your time and skills to create positive change in the world.
+            </p>
+        </div>
+    </div>
+
+    <div class="main">
+        <h1>Organisations</h1>
+        <div id="myBtnContainer">
+          <button type="button" class="btn active" onclick="filterSelection('all')">Show all</button>
+          <button type="button" class="btn" onclick="filterSelection('Animal')">Animal</button>
+          <button type="button" class="btn" onclick="filterSelection('Schools')">Schools</button>
+          <button type="button" class="btn" onclick="filterSelection('War')">War</button>
+        </div>
+
+        <div class="row">
+
+        </div>
+        <br>
+        <div id="footer"></div>
+
+        <script>
+        function openCity(cityName,elmnt,color) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+              tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+              tablinks[i].style.backgroundColor = "";
+            }
+            document.getElementById(cityName).style.display = "block";
+            elmnt.style.backgroundColor = color;
+
+          }
+          document.getElementById("defaultOpen").click();
+          </script>
+</body>
+
+</html>

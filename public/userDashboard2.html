@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>AW Volunteering</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/userDashboard2.css">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="javascripts/managerDashboard.js"></script>
+
+    <script src="javascripts/main.js"></script>
+    <script src="https://kit.fontawesome.com/ba7bded5c0.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+        <div id ="navBar"></div>
+        <div class="hero-image">
+            <div class="hero-text">
+                <h1>Hello John Doe</h1>
+                <span id = "name"></span>
+                <p></p>
+                <br>
+                <button type ="button" onclick = loadSettings()>Edit profile</button>
+                <span id = "manButton">
+                </span>
+                <span id = "adminButton"></span>
+
+            </div>
+        </div>
+        <div id="bruh"></div>
+    <div id='content'>
+        <div class="row">
+            <div class="column">
+                <div class ="upEvents"></div>
+                <div class ="postEvents"></div>
+
+            </div>
+            <div class="column2">
+                <div class="container">
+                    <h2>John Doe</h2>
+                    <p>Passionate professional with a knack for innovation, dedicated to excellence, and committed to making a positive impact globally.</p>
+                </div>
+                <br>
+                <div class="container">
+                    <h2>NEXT EVENT</h2>
+                    <p style="padding-bottom:5px;"></p>
+                    <h3>Wednesday</h3>
+                    <h3>5:00am - 9:00am</h3>
+                </div>
+                <br>
+                <div class="container">
+                    <h2 style = "font-style:italic">RECENT POSTS</h2>
+                    <hr>
+                    <div class="row post">
+                        <div class="column postImage">
+                            <img src ="images/postThumbnail.jpg" alt = "thumbnail">
+                        </div>
+                    <div class="column2 postContent">
+                        <h2>My Blog Post</h2>
+                    </div>
+
+                </div>
+                <br>
+
+                <div class="container">
+                    <div class="row post">
+                        <div class="column postImage">
+                            <img src ="images/postThumbnail.jpg" alt = "thumbnail">
+                        </div>
+                    <div class="column2 postContent">
+                        <h2>My Blog Post</h2>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div id ="footer"></div>
+
+<script>
+
+    function loadSettings(){
+        window.location.href = 'profileSettings.html';
+    }
+function isAdminCheck(){
+const xhr = new XMLHttpRequest();
+ xhr.onreadystatechange = function () {
+    if (this.readyState === 4 && this.status === 200) {
+        const isAdmin = JSON.parse(this.responseText);
+
+            if (isAdmin) {
+                textManager = "<button onclick = loadManagerDash()>Manager Dashboard</button>"
+                text = "<button onclick = loadAdminDash()>Admin Dashboard</button>";
+                document.getElementById("adminButton").innerHTML = text;
+                document.getElementById("manButton").innerHTML = textManager;
+            }
+    }
+}
+}
+
+function addUsername() {
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                    const username = JSON.parse(this.responseText);
+                    document.getElementById("name").innerHTML = "<h1>Hello " + username + "</h1>";
+                }
+            };
+            xhr.open("GET", "/username", true);
+            xhr.send();
+    }
+function getUpcomingEvents() {
+ const xhr = new XMLHttpRequest();
+ xhr.onreadystatechange = function () {
+   if (this.readyState === 4 && this.status === 200) {
+     let json = JSON.parse(this.responseText);
+       let text = "<h1>YOUR RSVPED EVENTS</h1><hr>";
+        for (let u of json) {
+         let time = new Date(u.event_date).toLocaleTimeString();
+         let day = new Date(u.event_date).toLocaleDateString('en-US', { weekday: 'long' });
+         let date = new Date(u.event_date).toLocaleDateString('en-US');
+         text += '<div class = "upEvent" onclick="getNewPage(' + u.event_id + ')"><h1>' + u.event_name + '</h1>';
+         text += '<p>' + date +  ' ' + day + ' ' + time + '</p>';
+         text += '<p>' + u.event_description + '</p></div>';
+     }
+
+       document.getElementsByClassName("upEvents")[0].innerHTML = text;
+   }
+ };
+ xhr.open("GET", "/rsvpedEvents", true);
+ xhr.send();
+}
+
+function getPublicPosts() {
+ const xhr = new XMLHttpRequest();
+ xhr.onreadystatechange = function () {
+   if (this.readyState === 4 && this.status === 200) {
+     let json = JSON.parse(this.responseText);
+       let text = "<h1>POSTS</h1><hr>";
+        for (let u of json) {
+        let time = new Date(u.post_date).toLocaleTimeString();
+         let day = new Date(u.post_date).toLocaleDateString('en-US', { weekday: 'long' });
+         let date = new Date(u.post_date).toLocaleDateString('en-US');
+         text += '<div class = "upEvent">';
+         text += `<h1>${u.post_title}</h1> <h5 style = "font-weight:bold";>${u.author_type}, ${date}, ${day}, ${time} </h5> <p>${u.post_content}</p></div>`;
+     }
+
+       document.getElementsByClassName("postEvents")[0].innerHTML = text;
+   }
+ };
+ xhr.open("GET", "/publicPostEvents", true);
+ xhr.send();
+}
+
+function getUsers() {
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                    let json = JSON.parse(this.responseText);
+                    let text = "<table> <thead> <tr> <th>Name</th> <th>Email</th> <th>Action</th> </tr> </thead> <tbody>";
+                    for (let u of json) {
+                        text += "<tr>";
+                        text += `<td>${u.first_name}  ${u.last_name}</td><td>${u.email}</td><td><button class="makeManagerBtn" onclick = addManagers(${u.user_id})>Make Manager</button></td></tr>`;
+                    }
+                    text += "</tbody></table>";
+                    document.getElementById('userTable').innerHTML = text;
+                }
+            };
+            xhr.open("GET", "/allUserData", true);
+            xhr.send();
+        }
+
+        function addManagers(userID) {
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+
+        }
+    };
+    xhr.open("POST", "/makeManager", true);
+    // Send the userID as a parameter in the send() method
+    xhr.send(JSON.stringify({userID: userID}));
+}
+
+
+        window.onLoad(getUsers(),getPublicPosts(),getUpcomingEvents(), isAdminCheck(), addUsername());
+        function loadCreateOrganisationPage() {
+            window.location.href = 'createOrganisation.html';
+        }
+
+</script>
+
+</body>
+
+</html>

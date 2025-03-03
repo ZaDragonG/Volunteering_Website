@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Jersey+25&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+
+body, html{
+    height: 100%;
+  }
+
+h1, h2, button, p{
+    font-family:"Inter", sans-serif;
+}
+
+h1{
+    font-size:50px;
+    font-weight:bolder;
+}
+
+h4{
+    font-size:50px;
+    font-weight:bolder;
+}
+
+
+.hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/ray-sangga-kusuma-7uSrOyY1U0I-unsplash.jpg");
+    height: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+  .hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding:50px;
+  }
+
+  .hero-text h1{
+    font-size:80px;
+  }
+
+  .aboutUs{
+    width:50%;
+    margin-left:20px;
+  }
+  .aboutUs h2{
+    font-size:40px;
+    font-weight: bolder;
+  }
+
+  .aboutUs p{
+    text-align:left;
+    font-size:15px;
+    line-height:25px;
+    padding:8px;
+  }
+
+  #aboutUsImg{
+    float:right;
+    width:50%;
+    bottom:300px;
+  }

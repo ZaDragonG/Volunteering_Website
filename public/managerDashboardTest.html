@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>Manager Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/stylesheets/managerDashboard.css">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <script src="/javascripts/main.js"></script>
+    <script src="javascripts/managerDashboard.js"></script>
+    </head>
+    <body>
+    <div id ="navBar"></div>
+    <div class="hero-image">
+        <div class="hero-text">
+            <h1>Hello John Doe</h1>
+            <p>Organisation Name</p>
+            <br>
+            <button type = "button" onclick="getPublicPosts(); getUpcomingEvents()">Edit profile</button>
+            <span id = "manButton">
+                <button type = "button" onclick = loadUserDash()>User Dashboard</button>
+            </span>
+            <span id = "adminButton">
+                <button type = "button" onclick = loadAdminDash()>Admin Dashboard</button>
+            </span>
+        </div>
+    </div>
+    <div class ="allContent">
+    <div class="tab">
+    <button type = "button" class="tablinks" onclick="openCity(event, 'Tab1');getPosts();" id="defaultOpen">Posts</button>
+    <button type = "button" class="tablinks" onclick="openCity(event, 'Tab2'); getEvents();">Events</button>
+    <button type = "button" class="tablinks" onclick="openCity(event, 'Tab3'); getUsers();">Users</button>
+    </div>
+
+    <div class = "tabRightHand">
+    <div id="Tab1" class="tabcontent">
+        <div class="myBtnContainer">
+            <button type="button" class="btn" onclick = "createPostPage()">Create Post</button>
+        </div>
+        <form>
+            <input type="text" id="fname" name="firstname" placeholder="What's on your mind?">
+        </form>
+        <div id="allPosts">
+
+        </div>
+    </div>
+
+    <div id="Tab3" class="tabcontent">
+        <div id = "bruh"></div>
+    </div>
+
+    <div id="Tab2" class="tabcontent">
+        <div class="myBtnContainer">
+            <button type="button" class="btn" onclick = "createEventPage()">Create Event</button>
+        </div>
+        <div id="upEvents"></div>
+
+
+</div>
+</div>
+</div>
+<div id = "footer"></div>
+
+
+
+    <script>
+
+function isAdminCheck(){
+const xhr = new XMLHttpRequest();
+ xhr.onreadystatechange = function () {
+    if (this.readyState === 4 && this.status === 200) {
+        const isAdmin = JSON.parse(this.responseText);
+
+            if (!isAdmin) {
+                window.location.href = 'index.html';
+            }
+    }
+}
+xhr.open("GET", "/isAdmin", true);
+ xhr.send();
+}
+
+    function loadUserDash(){
+        window.location.href = 'userDashboard2.html';
+    }
+
+    function createEventPage(){
+        window.location.href = 'createEvent.html';
+    }
+
+    function loadAdminDash() {
+
+    window.location.href = 'adminDashboard.html';
+    }
+
+    window.onLoad(isAdminCheck());
+    </script>
+    </body>
+</html>

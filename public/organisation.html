@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Our Funky HTML Page</title>
+  <meta name="description" content="Our first page">
+  <meta name="keywords" content="html tutorial template">
+  <link rel="stylesheet" href="/stylesheets/organisation.css">
+  <link rel="stylesheet" href="/stylesheets/main.css">
+  <script src="/javascripts/main.js"></script>
+  <script src="/javascripts/organisationList.js"></script>
+  <script src="https://kit.fontawesome.com/ba7bded5c0.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div id="navBar"></div>
+  <div class="container">
+    <img src="/images/volunteering.png" alt="Girl in a jacket">
+    <div class="button-box">
+      <h1>Find a role that is right for you</h1>
+    </div>
+  </div>
+  <div class="main">
+    <button type="button" class="tablink" onclick="openCity('London', this, '#426B1F')" id="defaultOpen">Why
+      volunteer?</button>
+    <button type="button" class="tablink" onclick="openCity('Paris', this, '#426B1F')">Requirements</button>
+    <button type="button" class="tablink" onclick="openCity('Tokyo', this, '#426B1F')">Conditions of Service</button>
+    <button type="button" class="tablink" onclick="openCity('Oslo', this, '#426B1F')">How to register</button>
+    <div id="London" class="tabcontent">
+      <h2>Why volunteer</h2>
+      <ul>
+        <li>
+          <h3>Contribute to your community</h3>
+          <p>Volunteering allows you to give back to your community by supporting local initiatives, organizations, and
+            causes that benefit others.</p>
+        </li>
+        <li>
+          <h3>Make a positive impact on others' lives</h3>
+          <p>Through volunteering, you have the opportunity to directly impact the lives of individuals in need, whether
+            it's by providing assistance, mentorship, or emotional support.</p>
+        </li>
+        <li>
+          <h3>Gain valuable experience and skills</h3>
+          <p>Volunteering provides hands-on experience and allows you to develop a wide range of skills such as
+            communication, leadership, problem-solving, and teamwork.</p>
+        </li>
+        <li>
+          <h3>Expand your network and make new friends</h3>
+          <p>Volunteering brings you into contact with diverse groups of people who share similar interests and values,
+            offering opportunities to build new friendships and professional connections.</p>
+        </li>
+        <li>
+          <h3>Improve mental and physical well-being through altruism</h3>
+          <p>Research suggests that volunteering can have positive effects on mental health by reducing stress, boosting
+            self-esteem, and providing a sense of purpose and fulfillment.</p>
+        </li>
+      </ul>
+    </div>
+
+    <div id="Paris" class="tabcontent">
+      <h2>Volunteering Requirements</h2>
+      <p>Before volunteering, it's important to consider the following requirements:</p>
+      <ul>
+        <li>
+          <h3>Age Restrictions:</h3>
+          <p>Some volunteer opportunities may have minimum age requirements due to safety concerns or legal regulations.
+          </p>
+        </li>
+        <li>
+          <h3>Time Commitment:</h3>
+          <p>Volunteer roles may require a specific time commitment, ranging from a few hours per week to full-time
+            positions.</p>
+        </li>
+        <li>
+          <h3>Skills and Qualifications:</h3>
+          <p>Certain volunteer positions may require specific skills, experience, or qualifications to effectively carry
+            out the duties involved.</p>
+          <ul>
+            <li>Technical skills (e.g., computer proficiency, language proficiency)</li>
+            <li>Interpersonal skills (e.g., communication, teamwork)</li>
+            <li>Specialized knowledge (e.g., medical training, teaching certification)</li>
+          </ul>
+        </li>
+        <li>
+          <h3>Training and Orientation:</h3>
+          <p>Volunteers may need to undergo training sessions or orientation programs to familiarize themselves with the
+            organization, its mission, and their roles.</p>
+        </li>
+      </ul>
+    </div>
+
+    <div id="Tokyo" class="tabcontent">
+      <h2>Conditions of Service for Volunteers</h2>
+      <p>Before committing to volunteer service, it's essential to understand the conditions involved:</p>
+      <ul>
+        <li>
+          <h3>Volunteer Agreement:</h3>
+          <p>Volunteers may be required to sign a volunteer agreement outlining their roles, responsibilities, and the
+            organization's expectations.</p>
+        </li>
+        <li>
+          <h3>Code of Conduct:</h3>
+          <p>Volunteers are expected to adhere to a code of conduct that promotes professionalism, respect,
+            confidentiality, and compliance with organizational policies and procedures.</p>
+        </li>
+        <li>
+          <h3>Confidentiality:</h3>
+          <p>Volunteers may have access to sensitive information about clients, donors, or the organization itself and
+            are expected to maintain strict confidentiality.</p>
+        </li>
+        <li>
+          <h3>Health and Safety:</h3>
+          <p>Organizations have a duty to ensure the health and safety of their volunteers, providing a safe working
+            environment and appropriate training on safety procedures.</p>
+        </li>
+        <li>
+          <h3>Conflict of Interest:</h3>
+          <p>Volunteers should avoid situations where their personal interests conflict with the interests of the
+            organization, its clients, or other volunteers.</p>
+        </li>
+
+      </ul>
+    </div>
+
+    <div id="Oslo" class="tabcontent">
+      <h2>How to Register as a Volunteer</h2>
+      <h3>To register as a volunteer:</h3>
+      <ol>
+        <li>Research volunteer opportunities.</li>
+        <li>Contact organizations offering positions.</li>
+        <li>Submit a volunteer application form.</li>
+        <li>Attend orientation if required.</li>
+        <li>Undergo background checks if necessary.</li>
+        <li>Participate in training sessions.</li>
+        <li>Start volunteering!</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="allOrganisations">
+    <h1>ORGANISATIONS</h1>
+    <div id="myBtnContainer">
+      <button type = "button" class="btn active" id = "openDefault" onclick="filterSelection('all')"> Show all</button>
+      <button type = "button" class="btn" onclick="filterSelection('nature')"> Nature</button>
+      <button type = "button" class="btn" onclick="filterSelection('cars')"> Cars</button>
+      <button type = "button" class="btn" onclick="filterSelection('people')"> People</button>
+    </div>
+
+    <!-- Portfolio Gallery Grid -->
+    <div class="row">
+
+    </div>
+  </div>
+
+  <div id="footer"></div>
+  <script>
+
+    filterSelection("all") // Execute the function and show all columns
+    function filterSelection(c) {
+      var x, i;
+      x = document.getElementsByClassName("column");
+      if (c == "all") c = "";
+      // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+      for (i = 0; i < x.length; i++) {
+        w3RemoveClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+      }
+    }
+
+    // Show filtered elements
+    function w3AddClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) {
+          element.className += " " + arr2[i];
+        }
+      }
+    }
+
+    // Hide elements that are not selected
+    function w3RemoveClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+          arr1.splice(arr1.indexOf(arr2[i]), 1);
+        }
+      }
+      element.className = arr1.join(" ");
+    }
+
+    // Add active class to the current button (highlight it)
+    var btnContainer = document.getElementById("myBtnContainer");
+    var btns = btnContainer.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function () {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
+
+    }
+
+    function getOrganisations() {
+      const xhr = new XMLHttpRequest();
+      var orgID = 1;
+      xhr.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+          let json = JSON.parse(this.responseText);
+          let text = "";
+          // Start table tag
+          for (let u of json) {
+            let limitedEventName = u.organisation_name.substring(0, 30);
+            text += "<div class='column nature'> <div class='content' onclick='getNewPage(" + u.organisation_id + ")'> <img src='/images/paul-earle-wVjd0eWNqI8-unsplash.jpg' alt='Mountains' style='width:100%'>";
+            text += `<h4>${limitedEventName} </h4> <p>${u.organisation_description}</p>`;
+            text += ' </div> </div>';
+            orgID++;
+          }
+
+
+          document.getElementsByClassName("row")[0].innerHTML = text;
+        }
+      };
+      xhr.open("GET", "/allOrganisationData", true);
+      xhr.send();
+    }
+
+    function openCity(cityName, elmnt, color) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablink");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+      }
+      document.getElementById(cityName).style.display = "block";
+      elmnt.style.backgroundColor = color;
+
+    }
+    document.getElementById("defaultOpen").click();
+    document.getElementById("openDefault").click();
+    window.addEventListener('load', getOrganisations);
+
+  </script>
+</body>
+
+</html>

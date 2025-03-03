@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/events.css">
+  <link rel="stylesheet" href="/stylesheets/main.css">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://kit.fontawesome.com/ba7bded5c0.js" crossorigin="anonymous"></script>
+  <script src="/javascripts/main.js"></script>
+  <script src="javascripts/events.js" defer></script>
+  <script src="routes/index.js"></script>
+
+
+    <title>AW Events</title>
+</head>
+<body>
+  <div id="app">
+    <div id="navBar"></div>
+
+    <div class="hero-image">
+      <div class="hero-text">
+        <h1>WHAT EVENTS ARE ON</h1>
+      </div>
+      <div class="container">
+        <h1>FIND OUT WHAT EVENTS ARE GOING ON</h1>
+        <br>
+        <hr>
+        <br>
+        <p>Unlock the power of giving back by joining volunteer events! Volunteering is your chance to make a real difference in your community and beyond. Imagine connecting with passionate, like-minded individuals while gaining valuable skills and experiences. Whether you're boosting your resume, expanding your network, or simply seeking the joy that comes from helping others, volunteering has something for everyone.</p>
+        <br>
+        <p>Don't miss out on the incredible sense of accomplishment and purpose that comes from volunteering. Join us at our next event and be part of a movement that's changing the world, one act of kindness at a time. Sign up today and start your journey toward making a lasting difference!</p>
+      </div>
+    </div>
+    <img style="width:600px;position:absolute; right:10%;top:80%;z-index:-1;" src="/images/joel-muniz-A4Ax1ApccfA-unsplash.jpg">
+    <div class="upEvents">
+      <h1>UPCOMING EVENTS</h1>
+      <hr>
+      <div class="upEvent"></div>
+
+    </div>
+
+    <div class="allEvents">
+      <h1>EVENTS</h1>
+      <div id="myBtnContainer">
+        <button id = "defaultOpen" class="btn active" onclick="filterSelection('all')"> Show all</button>
+        <button class="btn" onclick="filterSelection('Nature')"> Nature</button>
+        <button class="btn" onclick="filterSelection('Education')">Education</button>
+        <button class="btn" onclick="filterSelection('Environment')">Environment</button>
+        <button class="btn" onclick="filterSelection('Health')">Health</button>
+      </div>
+
+      <!-- Portfolio Gallery Grid -->
+      <div class="row">
+
+      </div>
+    </div>
+
+    <div id="footer"></div>
+
+  </div>
+
+
+</body>
+</html>

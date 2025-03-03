@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-top:100px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 150px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script src="/javascripts/main.js"></script>
+    <link rel="stylesheet" href="/stylesheets/main.css">
+</head>
+<body>
+    <div id = "navBar"></div>
+    <div class="container">
+        <h2>Create Post</h2>
+        <form id = "postForm" action="/createPosts" method="post">
+            <label for="organisation_id">Organisation ID</label>
+            <input type="text" id="organisation_id" name="organisation_id" required>
+
+            <label for="author_type">Author Type</label>
+            <select id="author_type" name="author_type" required>
+                <option value="manager">Manager</option>
+                <option value="admin">Admin</option>
+            </select>
+
+            <label for="author_id">Author ID</label>
+            <input type="text" id="author_id" name="author_id" required>
+
+            <label for="post_title">Post Title</label>
+            <textarea id="post_title" name="post_title" rows="4" required></textarea>
+
+            <label for="post_content">Post Content</label>
+            <textarea id="post_content" name="post_content" rows="4" required></textarea>
+
+
+            <label for="visibility">Visibility</label>
+            <select id="visibility" name="visibility" required>
+                <option value="public">Public</option>
+                <option value="private">Private</option>
+            </select>
+
+            <label for="post_date">Post Date</label>
+            <input type="datetime-local" id="post_date" name="post_date" required>
+
+            <input type="submit" value="Create Post">
+        </form>
+    </div>
+
+    <div id = "footer"></div>
+
+    <script>
+        document.getElementById('postForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
